@@ -8,8 +8,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 import appCss from "../styles.css?url";
-import { ThemeProvider } from "@emotion/react";
-import { createTheme } from "@mui/material/styles";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 export const Route = createRootRoute({
   head: () => ({

@@ -73,9 +73,9 @@ const AdvisoryLeaders = () => {
         <Typography variant="h4" sx={{ mb: 4, fontWeight: "bold" }}>
           Connect with our Advisory teams
         </Typography>
-        <Grid container spacing={1.5}>
-          {etTeam.map((leader, index) => (
-            <Grid key={index} size={{ xs: 6, md: 4, lg: 3 }}>
+        <Grid container spacing={1.5} sx={{justifyContent: 'center'}}>
+          {etTeam.map((leader) => (
+            <Grid key={leader.name} size={{ xs: 6, md: 4, lg: 3 }}>
               <TeamCard
                 image={leader.image}
                 name={leader.name}
@@ -90,8 +90,8 @@ const AdvisoryLeaders = () => {
             </Typography>
           </Grid>
 
-          {remoteTeam.map((leader, index) => (
-            <Grid key={index} size={{ xs: 6, md: 4, lg: 3 }}>
+          {remoteTeam.map((leader,) => (
+            <Grid key={leader.name} size={{ xs: 6, md: 4, lg: 3 }}>
               <TeamCard
                 image={leader.image}
                 name={leader.name}

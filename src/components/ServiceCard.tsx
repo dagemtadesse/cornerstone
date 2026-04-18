@@ -42,8 +42,8 @@ export const ServiceCard: React.FC<{
 
         <Collapse orientation="vertical" in={hovered}>
           <List sx={{ gap: 1.5, pt: 2 }}>
-            {items.map((service) => (
-              <ListItem sx={{}}>
+            {items.map((service, index) => (
+              <ListItem sx={{}} key={service + index}>
                 <ListItemIcon>
                   <Circle size={16} className="shrink-0" />
                 </ListItemIcon>

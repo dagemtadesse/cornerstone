@@ -12,7 +12,7 @@ function App() {
       <Introduction />
       <AdvisoryServicesSection />
       <AdvisoryLeaders />
-      <ContactForm/>
+      <ContactForm />
     </>
   );
 }

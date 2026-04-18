@@ -1,77 +1,113 @@
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import { ServiceCard } from "./ServiceCard";
+import Grid from "@mui/material/Grid";
+
 export default function AdvisoryServicesSection() {
   const services = [
     {
-      title: "CFO Advisory",
-      desc: "The responsibilities of CFOs have grown tremendously in recent years as the depth of their strategic acumen has become fully appreciated by their...",
+      title: "Market Entry & Expansion",
+      image: "market-expansion.jpg",
+      desc: "We help companies successfully launch and scale across Africa’s most complex and high-growth markets.",
+      items: [
+        "Market entry strategy and execution",
+        "Regulatory and licensing navigation",
+        "Partner identification (banks, telcos, regulators, platforms)",
+        "Go-to-market planning",
+      ],
     },
     {
-      title: "Business Consulting",
-      desc: "The purpose of growth isn’t just to get bigger. The real value is delivered when you grow and get better. Our people are skilled at helping you create...",
+      title: "Regulatory & Compliance Advisory",
+      image: "compliance.jpg",
+      desc: "We ensure your operations are compliant, secure, and built for long-term sustainability.",
+      items: [
+        "Licensing and regulatory approvals",
+        "AML/CFT and KYC frameworks",
+        "PCI-DSS compliance",
+        "Risk management and governance",
+        "Cross-border compliance strategy",
+      ],
     },
     {
-      title: "Outsourcing",
-      desc: "As costs rise, talent gaps widen, and digital demands accelerate, it’s time to rethink how work gets done. Our Outsourcing Services keep you focused...",
+      title: "Strategic Partnerships & Deal Facilitation",
+      image: "deal.jpg",
+      desc: "We don’t just advise—we open doors and help close deals.",
+      items: [
+        "Strategic partnership development",
+        "Telecom, banking, and fintech alliances",
+        "Deal structuring and negotiation support",
+        "Stakeholder engagement and ecosystem building",
+      ],
     },
     {
-      title: "Risk Advisory",
-      desc: "To fully understand and effectively act on the range of risks across your enterprise, you need access to the latest knowledge and leading practices...",
-    },
-    {
-      title: "Technology Modernization",
-      desc: "A strategic update of an organization’s technology can help decrease costs, increase value, drive efficiencies, boost performance and even improve...",
-    },
-    {
-      title: "Transaction Advisory",
-      desc: "Our holistic approach to transaction advisory services addresses the financial, operational, tax, IT commercial, strategic, human capital, and...",
+      title: "Digital Value Ecosystems ",
+      image: "digital-vale.jpg",
+      desc: "We help companies tap into Africa’s fast-growing digital value exchangeeconomy.",
+      items: [
+        "Gift card business model design and expansion",
+        "Airtime and voucher ecosystem integration",
+        "Liquidity sourcing and FX strategy",
+        "Fraud prevention and risk mitigation",
+        "Cross-border digital value exchange systems",
+      ],
     },
   ];
 
   return (
-    <section className="relative w-full py-20 text-white">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <img
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab"
-          alt="building"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand/90 to-black/60"></div>
-      </div>
-
+    <Box
+      id="services"
+      sx={{
+        background:
+          "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab')",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        position: "relative",
+        backgroundAttachment: "fixed",
+        "&:before": {
+          content: '""',
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(to right, rgba(0,0,0, 0.9), rgba(0, 0, 0, 0.6))",
+        },
+      }}
+    >
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
-        
+      <Container sx={{ py: 8, position: "relative" }}>
         {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <Typography
+          variant="h4"
+          sx={{ mb: 4, fontWeight: "bold" }}
+          color="primary"
+        >
           How can we help you?
-        </h2>
+        </Typography>
 
-        <p className="text-lg md:text-xl max-w-3xl mb-12 text-white/90">
+        <Typography
+          variant="body2"
+          sx={{ maxWidth: 680, mb: 6 }}
+          color="primary"
+        >
           Our advisory teams tackle challenges alongside you, designing fresh
-          solutions with a balance of scale, skill and service you’ll only find here.
-        </p>
+          solutions with a balance of scale, skill and service you’ll only find
+          here.
+        </Typography>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {services.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white text-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-xl transition"
-            >
-              <h3 className="text-lg font-semibold mb-3">
-                {item.title}
-              </h3>
-
-              <p className="text-sm text-gray-700">
-                {item.desc}
-                <span className="font-medium text-black cursor-pointer">
-                  {" "}Show more
-                </span>
-              </p>
-            </div>
+        <Grid container spacing={1.5}>
+          {services.map((item) => (
+            <Grid size={{ xs: 12, md: 6, lg: 3 }} key={item.title}>
+              <ServiceCard
+                title={item.title}
+                desc={item.desc}
+                items={item.items}
+                image={item.image}
+              />
+            </Grid>
           ))}
-        </div>
-      </div>
-    </section>
+        </Grid>
+      </Container>
+    </Box>
   );
 }

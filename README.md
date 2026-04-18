@@ -40,6 +40,42 @@ If you prefer not to use Tailwind CSS:
 
 
 
+## Email Configuration
+
+This application includes a contact form that sends emails using Gmail SMTP. To set it up:
+
+### Gmail Setup
+
+1. **Enable 2-Factor Authentication** on your Google account
+2. **Generate an App Password**:
+   - Go to [Google Account Settings](https://myaccount.google.com/)
+   - Navigate to Security → 2-Step Verification → App passwords
+   - Generate a new app password for "Mail"
+   - Use this 16-character password (without spaces) as your `EMAIL_PASS`
+
+3. **Environment Variables**:
+   Create a `.env` file in the root directory with:
+   ```
+   EMAIL_USER=your-gmail@gmail.com
+   EMAIL_PASS=your-16-character-app-password
+   CONTACT_EMAIL=where-to-send-contact-emails@gmail.com
+   ```
+
+### Alternative Email Services
+
+If you prefer not to use Gmail, you can configure other SMTP services:
+
+- **SendGrid**: Update the transporter configuration in `src/functions/sendContactEmail.ts`
+- **Mailgun**: Similar configuration changes needed
+- **AWS SES**: Requires AWS SDK setup
+
+### Testing Email
+
+To test the contact form:
+1. Fill out the form on the homepage
+2. Submit it
+3. Check the email account specified in `CONTACT_EMAIL` for the submission
+
 ## Routing
 
 This project uses [TanStack Router](https://tanstack.com/router) with file-based routing. Routes are managed as files in `src/routes`.

@@ -1,68 +1,123 @@
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import Container from "@mui/material/Container";
+import Stack from "@mui/material/Stack";
+import ButtonGroup from "@mui/material/ButtonGroup";
+import Button from "@mui/material/Button";
+import { MapPin } from "lucide-react";
+
 export default function Header() {
+  const contents = [
+    { to: "#intro", label: "About Us" },
+    { to: "#services", label: "Our services" },
+    { to: "#teams", label: "Our leaders" },
+  ];
+
   return (
     <>
-      <header className="w-full bg-primary text-secondary">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          {/* Left: Logo */}
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 border-2 border-white rounded-full flex items-center justify-center">
-              {/* Placeholder logo circle */}
-              <div className="w-5 h-5 border-2 border-white rounded-full"></div>
-            </div>
-            <span className="text-xl font-semibold">Cornerstone Advisory</span>
-          </div>
-        </div>
-      </header>
-
-      <header className="">
-        <div className="w-full">
-          {/* Hero Section */}
-          <div className="relative h-[420px] w-full overflow-hidden">
-            {/* Background Image */}
-            <img
-              src="/earth.jpg"
-              alt="Light bulbs"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-
-            {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black/60"></div>
-
-            {/* Content */}
-            <div className="relative z-10 flex flex-col justify-center h-full px-12 md:px-24 text-white">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar
+          position="relative"
+          sx={{ bgColor: "white", boxShadow: "none" }}
+        >
+          <Container>
+            <Toolbar sx={{ py: 1.5 }}>
+              <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2, img: { height: 40 } }}
+              >
+                <img src="/corenerstone-logo.png" alt="" height="40px" />
+              </IconButton>
+              <Typography
+                variant="body1"
+                component="div"
+                sx={{ flexGrow: 1, fontWeight: "thin" }}
+              >
                 Cornerstone Advisory
-              </h1>
+              </Typography>
 
-              <p className="text-lg md:text-2xl max-w-2xl font-medium">
+              <Stack direction={"row"} sx={{ alignItems: "center", gap: 1 }}>
+                <MapPin />
+                <Typography variant="body2">Addis Ababa, Ethiopia</Typography>
+              </Stack>
+            </Toolbar>
+          </Container>
+        </AppBar>
+      </Box>
+
+      <header>
+        <Box
+          sx={{
+            background: "url(hero-background.jpg)",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            position: "relative",
+            "&:before": {
+              content: '""',
+              position: "absolute",
+              inset: 0,
+              background:
+                "linear-gradient(to right, rgba(0,0,0, 0.75), rgba(0, 0, 0, 0.6))",
+            },
+          }}
+        >
+          <Container sx={{ position: "relative" }}>
+            <Stack
+              direction={"column"}
+              sx={{
+                py: 12,
+                justifyContent: "center",
+                minHeight: 420,
+                position: "relative",
+              }}
+            >
+              <Typography
+                color="white"
+                component={"h1"}
+                variant="h2"
+                sx={{ mb: 4, fontWeight: "bold", color: "white" }}
+              >
+                Cornerstone Advisory
+              </Typography>
+
+              <Typography
+                variant="h6"
+                component={"p"}
+                color="white"
+                sx={{ maxWidth: 680, color: "white", fontWeight: 300 }}
+              >
                 A pan-African company headquartered in Ethiopia, bringing
                 together top professionals across East, West and North Africa
-              </p>
-            </div>
-          </div>
+              </Typography>
+            </Stack>
+          </Container>
+        </Box>
 
-          {/* Bottom Navigation */}
-          <div className="bg-gray-100 border-t border-gray-200">
-            <div className="max-w-7xl mx-auto px-6 md:px-12">
-              <ul className="flex flex-wrap gap-8 py-4 text-gray-700 text-sm md:text-base">
-                <li className="hover:text-black cursor-pointer">
-                  Introduction
-                </li>
-                <li className="hover:text-black cursor-pointer">
-                  Our services
-                </li>
-                <li className="hover:text-black cursor-pointer">Why us</li>
-                <li className="hover:text-black cursor-pointer">
-                  Recent insights
-                </li>
-                <li className="hover:text-black cursor-pointer">
-                  Events & webcasts
-                </li>
-                <li className="hover:text-black cursor-pointer">Our leaders</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        {/* Bottom Navigation */}
+        <Box sx={{ py: 1.5 }}>
+          <Container>
+            <ButtonGroup variant="text" color="secondary">
+              {contents.map((content) => (
+                <>
+                  <Button
+                    LinkComponent={"a"}
+                    sx={{ px: 3 }}
+                    href={content.to}
+                    key={content.to}
+                  >
+                    <Typography variant="body2">{content.label}</Typography>
+                  </Button>
+                </>
+              ))}
+            </ButtonGroup>
+          </Container>
+        </Box>
       </header>
     </>
   );

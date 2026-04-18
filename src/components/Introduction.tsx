@@ -12,7 +12,7 @@ const Introduction = () => {
       <Container>
         {/* Text Content */}
         <Stack direction={"column"} sx={{ gap: 2 }}>
-          <Typography variant="h6" sx={{ mb: 6 }}>
+         <Typography variant="h4" sx={{ mb: 4, fontWeight: "bold" }}>
             Cornerstone Advisory
           </Typography>
 

@@ -43,11 +43,11 @@ export const ServiceCard: React.FC<{
               borderRadius: 2,
               mb: 1.5,
               ":before": {
-                bgcolor: "info.light",
+                bgcolor: "secondary.light",
                 content: '""',
                 inset: 0,
                 position: "absolute",
-                opacity: 0.1,
+                opacity: 0.35,
               },
             }}
           >

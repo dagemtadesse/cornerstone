@@ -86,7 +86,7 @@ const ContactForm = () => {
   });
 
   return (
-    <section className="bg-[#8C4404] ">
+    <section className="" id="contact-us">
       <Container maxWidth="md" sx={{ py: 8 }}>
         <Typography variant="h4" sx={{ mb: 4 }} color="primary">
           Ready to talk?{" "}

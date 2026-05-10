@@ -2,37 +2,26 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import AdvisoryServicesSection from "./Services";
 
 const Introduction = () => {
   return (
-    <Box
-      id="intro"
-      className="relative w-full py-20  bg-gradient-to-r from-[#F7F6F4] to-[#D6D1CA] "
-    >
+    <Box id="intro" className="relative w-full py-20  ">
       <Container>
         {/* Text Content */}
-        <Stack direction={"column"} sx={{ gap: 2 }}>
-         <Typography variant="h4" sx={{ mb: 4, fontWeight: "bold" }}>
+        <Stack direction={"column"} sx={{ gap: 2, maxWidth: "md" }}>
+          <Typography variant="h4" sx={{  fontWeight: "bold" }}>
             Our Core Expertise
           </Typography>
 
-          <Typography variant="body2" sx={{ lineHeight: 2 }}>
-            Our vision is to be the leading enabler of market entry and scalable
-            digital growth across Africa, offering core services in strategic
-            partnerships, deal facilitation, and regulatory advisory. We combine
-            deep local insight with global expertise to deliver actionable
-            strategies and digital ecosystems that unlock high-value
-            opportunities for our clients.
-          </Typography>
-          <Typography variant="body2" sx={{ lineHeight: 2 }}>
-            Driven by a team of over 10 legal, tech, and sales experts with vast
-            networks across East, West, and North Africa, we have established a
-            strong track record of success. Since January, we have helped
-            companies like Lira, 54Pay, Nala, and PrepayNation expand their
-            reach and close pivotal deals, bridging the gap between strategy and
-            execution.
+          <Typography variant="body2" sx={{ lineHeight: 2, mb: 4 }}>
+            Cornerstone Advisory is a premier entry strategy firm focused on
+            Africa. We bridge the gap between global capital and regional
+            opportunities through three key pillars.
           </Typography>
         </Stack>
+
+        <AdvisoryServicesSection />
       </Container>
     </Box>
   );

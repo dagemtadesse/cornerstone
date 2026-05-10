@@ -9,6 +9,7 @@ import Header from "../components/Header";
 
 import appCss from "../styles.css?url";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -48,14 +49,18 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       },
       secondary: {
         main: "#eab308",
-        contrastText: ''
+        contrastText: "",
       },
       info: {
-        main: "#0a192f"
+        main: "#0a192f",
       },
       // "neutral": {
       //   main: "#64748b"
       // }
+      background: {
+        default: "#eff4ff",
+        paper: "#fff",
+      },
     },
     typography: {
       fontFamily: '"IBM Plex Sans", sans-serif',
@@ -69,6 +74,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <body>
           <Header />
           {children}

@@ -10,10 +10,23 @@ export const TeamCard: React.FC<{
 }> = ({ image, name, description }) => {
   return (
     <>
-      <Card sx={{ height: "100%", borderRadius: 4 }} variant="outlined">
-        <CardMedia image={image} title={name} sx={{ aspectRatio: "1" }} />
-        <CardContent>
-          <Typography variant="subtitle2" sx={{ mb: 1 }}>
+      <Card
+        sx={{ height: "100%", borderRadius: 2, display: "flex" }}
+        variant="outlined"
+      >
+        <CardMedia
+          image={image}
+          title={name}
+          sx={{ aspectRatio: "1", height: 160, flexShrink: 0 }}
+        />
+        <CardContent
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <Typography variant="h6" sx={{ mb: 1 }}>
             {name}
           </Typography>
           <Typography variant="body2">{description}</Typography>

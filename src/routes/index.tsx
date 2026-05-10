@@ -1,7 +1,5 @@
-import ContactForm from "#/components/ContactForm";
+import { Hero } from "#/components/Hero";
 import Introduction from "#/components/Introduction";
-import AdvisoryServicesSection from "#/components/Services";
-import AdvisoryLeaders from "#/components/Teams";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({ component: App });
@@ -9,10 +7,8 @@ export const Route = createFileRoute("/")({ component: App });
 function App() {
   return (
     <>
+      <Hero />
       <Introduction />
-      <AdvisoryServicesSection />
-      <AdvisoryLeaders />
-      <ContactForm />
     </>
   );
 }

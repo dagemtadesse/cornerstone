@@ -24,7 +24,7 @@ export default function Header() {
           sx={{ bgColor: "white", boxShadow: "none" }}
         >
           <Container>
-            <Toolbar sx={{ py: 1.5 }}>
+            <Toolbar sx={{ py: 1 }}>
               <IconButton
                 size="large"
                 edge="start"
@@ -35,17 +35,29 @@ export default function Header() {
                 <img src="/corenerstone-logo.png" alt="" height="40px" />
               </IconButton>
               <Typography
-                variant="body1"
+                variant="h6"
                 component="div"
+                color="info"
                 sx={{ flexGrow: 1, fontWeight: "thin" }}
               >
                 Cornerstone Advisory
               </Typography>
 
-              <Stack direction={"row"} sx={{ alignItems: "center", gap: 1 }}>
-                <MapPin />
-                <Typography variant="body2">Addis Ababa, Ethiopia</Typography>
-              </Stack>
+              <ButtonGroup variant="text" color="secondary">
+                {contents.map((content) => (
+                  <>
+                    <Button
+                      LinkComponent={"a"}
+                      sx={{ px: 3 }}
+                      href={content.to}
+                      key={content.to}
+                      color="info"
+                    >
+                      <Typography variant="body2">{content.label}</Typography>
+                    </Button>
+                  </>
+                ))}
+              </ButtonGroup>
             </Toolbar>
           </Container>
         </AppBar>
@@ -54,7 +66,7 @@ export default function Header() {
       <header>
         <Box
           sx={{
-            background: "url(hero-background.jpg)",
+            background: "url(hero.png)",
             backgroundPosition: "center",
             backgroundSize: "cover",
             position: "relative",
@@ -63,7 +75,7 @@ export default function Header() {
               position: "absolute",
               inset: 0,
               background:
-                "linear-gradient(to right, rgba(0,0,0, 0.75), rgba(0, 0, 0, 0.6))",
+                "linear-gradient(to right, rgba(0,0,0, 0.5), rgba(0, 0, 0, 0.3))",
             },
           }}
         >
@@ -81,9 +93,14 @@ export default function Header() {
                 color="white"
                 component={"h1"}
                 variant="h2"
-                sx={{ mb: 4, fontWeight: "bold", color: "white" }}
+                sx={{
+                  mb: 4,
+                  fontWeight: "bold",
+                  color: "white",
+                  maxWidth: "sm",
+                }}
               >
-                Cornerstone Advisory
+                Navigating & Accelerating Market Entry Across Africa
               </Typography>
 
               <Typography
@@ -92,32 +109,24 @@ export default function Header() {
                 color="white"
                 sx={{ maxWidth: 680, color: "white", fontWeight: 300 }}
               >
-                A pan-African company headquartered in Ethiopia, bringing
-                together top professionals across East, West and North Africa
+                Empowering global businesses to expand and thrive in Africa
+                through strategic advisory, digital ecosystems, and regulatory
+                expertise.
               </Typography>
+
+              <Stack direction={"row"} sx={{ gap: 4, mt: 4 }}>
+                <Button variant="contained" color="secondary" size="large">
+                  Book a Strategy Call
+                </Button>
+                <Button variant="outlined" color="primary" size="large">
+                  View Case Studies
+                </Button>
+              </Stack>
             </Stack>
           </Container>
         </Box>
 
         {/* Bottom Navigation */}
-        <Box sx={{ py: 1.5 }}>
-          <Container>
-            <ButtonGroup variant="text" color="secondary">
-              {contents.map((content) => (
-                <>
-                  <Button
-                    LinkComponent={"a"}
-                    sx={{ px: 3 }}
-                    href={content.to}
-                    key={content.to}
-                  >
-                    <Typography variant="body2">{content.label}</Typography>
-                  </Button>
-                </>
-              ))}
-            </ButtonGroup>
-          </Container>
-        </Box>
       </header>
     </>
   );

@@ -47,8 +47,15 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         main: "#fff",
       },
       secondary: {
-        main: "#1C3659",
+        main: "#eab308",
+        contrastText: ''
       },
+      info: {
+        main: "#0a192f"
+      },
+      // "neutral": {
+      //   main: "#64748b"
+      // }
     },
     typography: {
       fontFamily: '"IBM Plex Sans", sans-serif',

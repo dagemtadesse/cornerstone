@@ -3,6 +3,7 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { TeamCard } from "./TeamCard";
+import { StaggerContainer, StaggerItem, FadeIn } from "./MotionWrappers";
 
 const AdvisoryLeaders = () => {
   const etTeam = [
@@ -70,36 +71,47 @@ const AdvisoryLeaders = () => {
   return (
     <Box sx={{ py: 8 }} id="teams">
       <Container>
-        <Typography variant="h4" sx={{ mb: 4, fontWeight: "bold" }}>
-          Connect with our Advisory teams
-        </Typography>
-        <Grid container spacing={1.5} sx={{ justifyContent: "center" }}>
-          {etTeam.map((leader) => (
-            <Grid key={leader.name} size={{ xs: 12, md: 6 }}>
-              <TeamCard
-                image={leader.image}
-                name={leader.name}
-                description={leader.description}
-              />
-            </Grid>
-          ))}
+        <FadeIn>
+          <Typography variant="h4" sx={{ mb: 4, fontWeight: "bold" }}>
+            Connect with our Advisory teams
+          </Typography>
+        </FadeIn>
+        
+        <StaggerContainer>
+          <Grid container spacing={1.5} sx={{ justifyContent: "center" }}>
+            {etTeam.map((leader) => (
+              <Grid key={leader.name} size={{ xs: 12, md: 6 }}>
+                <StaggerItem>
+                  <TeamCard
+                    image={leader.image}
+                    name={leader.name}
+                    description={leader.description}
+                  />
+                </StaggerItem>
+              </Grid>
+            ))}
 
-          <Grid size={12} sx={{ mt: 6 }}>
-            <Typography variant="h5" sx={{ fontWeight: "medium", my: 2 }}>
-              Remote Advisory Team
-            </Typography>
+            <Grid size={12} sx={{ mt: 6 }}>
+              <StaggerItem>
+                <Typography variant="h5" sx={{ fontWeight: "medium", my: 2 }}>
+                  Remote Advisory Team
+                </Typography>
+              </StaggerItem>
+            </Grid>
+
+            {remoteTeam.map((leader) => (
+              <Grid key={leader.name} size={{ xs: 12, md: 6 }}>
+                <StaggerItem>
+                  <TeamCard
+                    image={leader.image}
+                    name={leader.name}
+                    description={leader.description}
+                  />
+                </StaggerItem>
+              </Grid>
+            ))}
           </Grid>
-
-          {remoteTeam.map((leader) => (
-            <Grid key={leader.name} size={{ xs: 12, md: 6 }}>
-              <TeamCard
-                image={leader.image}
-                name={leader.name}
-                description={leader.description}
-              />
-            </Grid>
-          ))}
-        </Grid>
+        </StaggerContainer>
       </Container>
     </Box>
   );

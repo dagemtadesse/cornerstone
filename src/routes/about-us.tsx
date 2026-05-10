@@ -18,9 +18,13 @@ function App() {
           backgroundSize: "cover",
           position: "relative",
           "&:before": {
-            content: '""',
-            position: "absolute",
-            inset: 0,
+             "&:before": {
+              content: '""',
+              position: "absolute",
+              inset: 0,
+              background:
+                "linear-gradient(to right, rgba(0,0,0, 0.4), rgba(0, 0, 0, 0.35))",
+            },
           },
         }}
       >
@@ -28,7 +32,7 @@ function App() {
           <Stack
             direction={"column"}
             sx={{
-              py: 12,
+              py: 10,
               justifyContent: "center",
               minHeight: 420,
               position: "relative",

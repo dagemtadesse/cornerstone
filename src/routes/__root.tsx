@@ -3,9 +3,11 @@ import {
   HeadContent,
   Outlet,
   Scripts,
+  useRouterState,
 } from "@tanstack/react-router";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import { PageTransition } from "../components/MotionWrappers";
 
 import appCss from "../styles.css?url";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -33,9 +35,12 @@ export const Route = createRootRoute({
     ],
   }),
   component: () => {
+    const routerState = useRouterState();
     return (
       <RootDocument>
-        <Outlet />
+        <PageTransition routeKey={routerState.location.pathname}>
+          <Outlet />
+        </PageTransition>
       </RootDocument>
     );
   },

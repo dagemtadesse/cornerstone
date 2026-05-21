@@ -33,7 +33,7 @@ export const TeamCard: React.FC<{
         <CardMedia
           image={image}
           title={name}
-          sx={{ aspectRatio: "1", height: 160, flexShrink: 0 }}
+          sx={{ aspectRatio: "6/9", height: 160, flexShrink: 0 }}
         />
         <CardContent
           sx={{

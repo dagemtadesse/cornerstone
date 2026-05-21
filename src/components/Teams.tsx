@@ -11,25 +11,25 @@ const AdvisoryLeaders = () => {
       name: "Abebe Assefa",
       description:
         "CEO & Co-Founder | 15+ years of fintech leadership experience",
-      image: "professional-headshot.jpg", // Replace with actual image
+      image: "/profile-picture/abebe-assefa.jpeg", // Replace with actual image
     },
     {
       name: "Tekle Mengesha",
       description:
         "Technology Advisor | 16+ years leading project  management and research & development initiatives",
-      image: "professional-headshot.jpg",
+      image: "/profile-picture/tekle-mengesha.jpeg",
     },
     {
       name: "Abraham Degefa",
       description:
         "Regulatory & Compliance Counsel | 7+ years experience in fintech counseling",
-      image: "professional-headshot.jpg",
+      image: "/profile-picture/abraham-degefa.jpeg",
     },
     {
       name: "Fredi Merhatsidk",
       description:
         "Research & Strategy Lead | 20+ experience in leadership , research and strategy",
-      image: "professional-headshot.jpg",
+      image: "/profile-picture/fredi-merhatsidik.jpeg",
     },
   ];
 
@@ -38,33 +38,33 @@ const AdvisoryLeaders = () => {
       name: "Baba GUEYE (SN)",
       description:
         "15+years of experience in FIntech VP of Growth at Interswitch",
-      image: "professional-headshot.jpg", // Replace with actual image
+      image: "/profile-picture/baba.png", // Replace with actual image
     },
     {
       name: "Youssef El Madaani (MA)",
       description: "15+years of experience in FIntech and telecom BDM at Nokia",
-      image: "professional-headshot.jpg",
+      image: "/profile-picture/Youssef.jpeg",
     },
     {
       name: "Ahmed Marwan (EG)",
       description: "12+years of experience in FIntech Head of Mena at On Afriq",
-      image: "professional-headshot.jpg",
+      image: "/profile-picture/ahmed.jpeg",
     },
     {
       name: "Quinton Maronga (CD)",
       description:
         "7+years of experience in FIntech Head of Operations CTG-Texaf Digital",
-      image: "professional-headshot.jpg",
+      image: "/profile-picture/quinton.jpeg",
     },
     {
       name: "Issiaga Dialo (CI)",
       description: "15+years of experience in FIntech and telecom",
-      image: "professional-headshot.jpg",
+      image: "/profile-picture/issaga.png",
     },
     {
       name: "Victor Ibizugbe(NG)",
       description: "7+ years driving operational excellence in fintech",
-      image: "professional-headshot.jpg",
+      image: "/profile-picture/victor-ibizu.jpeg",
     },
   ];
 

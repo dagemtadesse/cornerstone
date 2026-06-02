@@ -14,7 +14,7 @@ const AdvisoryLeaders = () => {
       image: "/profile-picture/abebe-assefa.jpeg", // Replace with actual image
     },
     {
-      name: "Tigabu Dange",
+      name: "Tigabu Dagne",
       description:
         "Technology Advisor | 16+ years leading project  management and research & development initiatives",
       image: "/profile-picture/tekle-mengesha.jpeg",
